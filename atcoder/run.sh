@@ -8,4 +8,5 @@ if [ $# -ne 1 ]; then
 fi
 
 RUST_BACKTRACE=1 cargo run --bin task_$1 < sample/$1.txt
+cargo +1.42.0 check
 cargo build --bin task_$1 --release &> /dev/null && time ./target/release/task_$1 < sample/$1.txt &> /dev/null
