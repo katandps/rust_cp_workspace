@@ -5,12 +5,14 @@ RUST_LIBRARY_CHECKER:=1.53.0
 RUST_AIZU_ONLINE_JUDGE:=1.41.0
 RUST_ALGO_METHOD:=1.42.0
 
-run-%: build-%
-	time -f "Memory:%M KB time:%e" ./target/release/task_$* < sample/$*.txt
+run-%: test-% build-%
+	time -f "Memory:%M KB time:%e" ./target/release/task_$* < sample/$*.txt 1>/dev/null
+
+test-%:
+	cargo run --bin task_a < sample/$*.txt
 
 build-%:
-	cat current-toolchain
-	cargo +`cat current-toolchain` build --bin task_$* --release
+	cat current-toolchain && cargo +`cat current-toolchain` build --bin task_$* --release
 
 atcoder:
 	echo $(RUST_ATCODER) > current-toolchain
