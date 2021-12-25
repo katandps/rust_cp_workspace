@@ -5,9 +5,6 @@ RUST_LIBRARY_CHECKER:=1.53.0
 RUST_AIZU_ONLINE_JUDGE:=1.41.0
 RUST_ALGO_METHOD:=1.42.0
 
-run-%: test-% build-%
-	time -f "Memory:%M KB time:%e" ./target/release/task_$* < sample/$*.txt 1>/dev/null
-
 test-%:
 	cargo run --bin task_$* < sample/$*.txt
 
@@ -31,3 +28,6 @@ aizu-online-judge:
 
 algo-method:
 	echo $(RUST_ALGO_METHOD) > current-toolchain
+
+%: test-% build-%
+	time -f "Memory:%M KB time:%e" ./target/release/task_$* < sample/$*.txt 1>/dev/null
