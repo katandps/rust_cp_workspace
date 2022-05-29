@@ -38,6 +38,14 @@ reset:
 	echo "" > sample/f.txt
 	echo "" > sample/g.txt
 	echo "" > sample/h.txt
+	echo "" > src/a.rs
+	echo "" > src/b.rs
+	echo "" > src/c.rs
+	echo "" > src/d.rs
+	echo "" > src/e.rs
+	echo "" > src/f.rs
+	echo "" > src/g.rs
+	echo "" > src/h.rs
 
 %: test-% build-%
 	time -f "Memory:%M KB time:%e" ./target/release/task_$* < sample/$*.txt 1>/dev/null
