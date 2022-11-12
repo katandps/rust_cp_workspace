@@ -19,32 +19,32 @@ opt-level = 3
 # ---------------------------------------------------------------------
 [[bin]]
 name = "task_a"
-path = "src/a.rs"
+path = "src/a/main.rs"
 
 [[bin]]
 name = "task_b"
-path = "src/b.rs"
+path = "src/b/main.rs"
 
 [[bin]]
 name = "task_c"
-path = "src/c.rs"
+path = "src/c/main.rs"
 
 [[bin]]
 name = "task_d"
-path = "src/d.rs"
+path = "src/d/main.rs"
 
 [[bin]]
 name = "task_e"
-path = "src/e.rs"
+path = "src/e/main.rs"
 
 [[bin]]
 name = "task_f"
-path = "src/f.rs"
+path = "src/f/main.rs"
 
 [[bin]]
 name = "task_g"
-path = "src/g.rs"
+path = "src/g/main.rs"
 
 [[bin]]
 name = "task_h"
-path = "src/h.rs"
+path = "src/h/main.rs"
