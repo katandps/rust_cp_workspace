@@ -6,7 +6,7 @@ RUST_AIZU_ONLINE_JUDGE:=1.41.0
 RUST_ALGO_METHOD:=1.42.0
 
 test-%:
-	env RUST_BACKTRACE=1 cargo run --bin task_$* < src/$*/in
+	env RUST_BACKTRACE=1 cargo run --bin task_$* < in
 
 build-%:
 	cat current-toolchain && cargo +`cat current-toolchain` build --bin task_$* --release
@@ -48,4 +48,4 @@ reset:
 	echo "" > src/h.rs
 
 %: test-% build-%
-	time -f "Memory:%M KB time:%e" ./target/release/task_$* < src/$*/in 1>/dev/null
+	time -f "Memory:%M KB time:%e" ./target/release/task_$* < in 1>/dev/null
